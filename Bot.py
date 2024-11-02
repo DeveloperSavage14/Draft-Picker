@@ -15,7 +15,7 @@ tree = bot.tree
 class MyView(discord.ui.View):
     @discord.ui.button(label="Click Me", style=discord.ButtonStyle.primary, custom_id="button1")
     async def button_callback(self, button: discord.ui.Button, interaction: discord.Interaction):
-        await interaction.response.send_message("Button clicked!", ephemeral=True)
+        await interaction.message.edit(content="Button clicked and message edited!")
 
 @bot.event
 async def on_ready():
