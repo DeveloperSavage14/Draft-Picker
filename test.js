@@ -1,3 +1,10 @@
+require('dotenv').config();
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+
+client.once('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+});
 const { REST, Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
@@ -44,5 +51,5 @@ module.exports = {
 
         )
 };
-
+client.login(process.env.DISCORD_TOKEN);
 
