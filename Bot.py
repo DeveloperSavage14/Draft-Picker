@@ -4,7 +4,11 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from discord.ui import Modal, InputText
+import google.generativeai as genai
 
+AI_Key= os.getenv("AI_TOKEN")
+model = genai.GenerativeModel("gemini-1.5-flash")
+genai.configure(api_key="YOUR_API_KEY")
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
 
