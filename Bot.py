@@ -8,7 +8,7 @@ import google.generativeai as genai
 
 AI_Key= os.getenv("AI_TOKEN")
 model = genai.GenerativeModel("gemini-1.5-flash")
-genai.configure(api_key="YOUR_API_KEY")
+genai.configure(api_key="AI_TOKEN")
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
 
